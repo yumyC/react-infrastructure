@@ -1,9 +1,9 @@
-import React from 'react';
+import './footer.module.scss'
 
 function Footer() {
   return (
-    <div>
-      Footer
+    <div className="footer">
+      copyright@yummy2022
     </div>
   );
 }

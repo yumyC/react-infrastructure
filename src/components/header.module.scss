@@ -1,0 +1,18 @@
+:global {
+  .header-box {
+    padding: 20px 0;
+    color: var(--font-color);
+    background-color: var(--theme-color);
+    box-shadow: 2px 5px 11px rgba(0, 0, 0, .15);
+
+    *.ui *.item {
+      color: var(--font-color) !important;
+    }
+    .image {
+      width: 60px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+$theme-color: #06183d;
+$gray-color: #444;
+$bg-light-color: #ffffff;
+$bg-color: #f7f7f7;
+@primaryColor: $theme-color;
+@pageBackground: $bg-color;
+
+$theme-colors: (
+  "theme-color": $bg-light-color,
+  "font-color": $gray-color,
+) !default;
