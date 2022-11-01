@@ -1,15 +1,15 @@
-import logo from '../assets/img/logo.png'
 import { Card, Button, Image } from 'semantic-ui-react'
 
 interface cardInfo {
   name: string,
+  description?: string,
   logoSrc?: string,
   linkUrl?: string
 }
 
 const CardExampleCard: React.FC<cardInfo> = (props) => {
-  const {name, logoSrc, linkUrl} = props
-  const date:any = new Date().toLocaleString();
+  const {name, logoSrc, linkUrl, description} = props
+  const date:string = new Date().toLocaleString();
 
   return (
     <Card>
@@ -22,7 +22,7 @@ const CardExampleCard: React.FC<cardInfo> = (props) => {
           <span className='date'>{date}</span>
         </Card.Meta>
         <Card.Description>
-          so sweet.
+          {description?description:null}
         </Card.Description>
       </Card.Content>
 
