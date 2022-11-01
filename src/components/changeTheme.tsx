@@ -23,8 +23,10 @@ const changeTheme = () => {
   if(themeColor) {
     const newColor = themeColor==='black'?'#3e1058':'#ffffff'
     const newFontColor = themeColor==='black'?'#ffffff':'#444'
+    const newSecondaryColor = themeColor==='black'?'#4f3c64':'#ffffff'
     const rootDom:any = document.querySelector(':root');
     rootDom.style.setProperty('--theme-color', newColor);
+    rootDom.style.setProperty('--theme-secondary-color', newSecondaryColor);
     rootDom.style.setProperty('--font-color', newFontColor);
   }
   return (

@@ -8,7 +8,7 @@
 
 
 html,body {
-  background-color: $bg-color;
+  background-color: var(--theme-color);
 }
 body {
   :global {
