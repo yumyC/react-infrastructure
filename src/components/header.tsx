@@ -1,7 +1,7 @@
 import { Container,Grid, Menu, Image, Icon } from 'semantic-ui-react';
 import { useNavigate } from "react-router-dom";
 import './header.module.scss'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/img/logo.svg'
 import ChangeTheme from './changeTheme'
 
 function Header() {

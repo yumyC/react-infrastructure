@@ -1,0 +1,10 @@
+@import '@/scss-public/variables.module.scss';
+
+:global {
+  .main-content {
+    .ui.container {
+      padding: 20px;
+      background-color: var(--theme-color);
+    }
+  }
+}

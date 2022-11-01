@@ -21,7 +21,7 @@ const changeTheme = () => {
   }
 
   if(themeColor) {
-    const newColor = themeColor==='black'?'#06183d':'#ffffff'
+    const newColor = themeColor==='black'?'#3e1058':'#ffffff'
     const newFontColor = themeColor==='black'?'#ffffff':'#444'
     const rootDom:any = document.querySelector(':root');
     rootDom.style.setProperty('--theme-color', newColor);

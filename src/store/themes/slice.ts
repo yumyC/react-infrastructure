@@ -50,7 +50,7 @@ const themesSlice = createSlice({
   reducers: {
     getTheme(state) {
       state.entities['theme'] = {
-        color: 'black',
+        color: 'white',
         size: 'normal'
       }
     },

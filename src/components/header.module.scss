@@ -5,8 +5,13 @@
     background-color: var(--theme-color);
     box-shadow: 2px 5px 11px rgba(0, 0, 0, .15);
 
-    *.ui *.item {
-      color: var(--font-color) !important;
+    *.ui {
+      .menu {
+        margin: 0;
+      }
+      *.item {
+        color: var(--font-color) !important;
+      }
     }
     .image {
       width: 60px;
