@@ -31,7 +31,7 @@ const changeTheme = () => {
   }
   return (
     <div className='flex-column-center'>
-        <Button primary onClick={setThemeColor}>切换主题</Button>
+        <Button primary onClick={setThemeColor}>changeTheme</Button>
     </div>
   );
 };

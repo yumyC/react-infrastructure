@@ -4,11 +4,12 @@ interface cardInfo {
   name: string,
   description?: string,
   logoSrc?: string,
-  linkUrl?: string
+  linkUrl?: string,
+  slot?: any
 }
 
 const CardExampleCard: React.FC<cardInfo> = (props) => {
-  const {name, logoSrc, linkUrl, description} = props
+  const {name, logoSrc, linkUrl, description, slot} = props
   const date:string = new Date().toLocaleString();
 
   return (
@@ -30,6 +31,13 @@ const CardExampleCard: React.FC<cardInfo> = (props) => {
         linkUrl?
         <Card.Content extra>
           <Button><a></a></Button>
+        </Card.Content>:null
+      }
+
+      {
+        slot?
+        <Card.Content extra>
+         {slot}
         </Card.Content>:null
       }
     </Card>

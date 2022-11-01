@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import Card from '@/components/card'
+import { Grid, Icon, Card} from 'semantic-ui-react';
+import YumyCard from '@/components/card'
 import info from '@/assets/img/info.png'
 import './home.module.scss';
 
@@ -7,7 +8,32 @@ const home = () => {
   useEffect(() => {
   }, [])
   return (
-    <Card name='yummy' logoSrc={info} description='so sweet' />
+    <Grid columns='equal'>
+      <Grid.Column>
+        <YumyCard
+          name='yummy'
+          logoSrc={info}
+          description='so sweet'
+          slot={<Icon name='like' />}
+        />
+        <YumyCard
+          name='contact me'
+          slot={<Icon name='github' />}
+        />
+      </Grid.Column>
+      <Grid.Column width={8}>
+        <Card.Group>
+          <Card fluid color='red' header='article 1' />
+          <Card fluid color='orange' header='article 2' />
+          <Card fluid color='yellow' header='article 3' />
+        </Card.Group>
+      </Grid.Column>
+      <Grid.Column>
+        <YumyCard
+          name='timeline'
+        />
+      </Grid.Column>
+    </Grid>
   );
 };
 export default home;
