@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTheme, setTheme } from '@/store/themes/slice';
 import { useEffect } from "react";
-import { Button } from 'semantic-ui-react';
+import { Button } from 'react-bootstrap';
 import { jsPDF } from "jspdf";
 // import font from "./NotoSansCJKtc-Regular-normal";
 
@@ -41,7 +41,7 @@ const changeTheme = () => {
   }
   return (
     <div className='flex-column-center'>
-        <Button primary onClick={setThemeColor}>changeTheme</Button>
+        <Button onClick={setThemeColor}>changeTheme</Button>
     </div>
   );
 };

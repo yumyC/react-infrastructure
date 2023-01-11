@@ -13,11 +13,8 @@
         color: var(--font-color) !important;
       }
     }
-    .image {
-      width: 60px;
-      img {
-        max-width: 100%;
-      }
+    img {
+      max-width: 60px;
     }
   }
 }
