@@ -1,4 +1,4 @@
-import { Card, Button, Image } from 'semantic-ui-react'
+import { Card, Button, Image } from 'react-bootstrap'
 
 interface cardInfo {
   name: string,
@@ -15,30 +15,28 @@ const CardExampleCard: React.FC<cardInfo> = (props) => {
   return (
     <Card>
       {
-        logoSrc?<Image src={logoSrc} wrapped ui={false} />:null
+        logoSrc?<Image src={logoSrc} />:null
       }
-      <Card.Content>
-        <Card.Header>{name}</Card.Header>
-        <Card.Meta>
-          <span className='date'>{date}</span>
-        </Card.Meta>
-        <Card.Description>
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
           {description?description:null}
-        </Card.Description>
-      </Card.Content>
+        </Card.Text>
+        <span className='date'>{date}</span>
+      </Card.Body>
 
       {
         linkUrl?
-        <Card.Content extra>
+        <Card.Body>
           <Button><a></a></Button>
-        </Card.Content>:null
+        </Card.Body>:null
       }
 
       {
         slot?
-        <Card.Content extra>
+        <Card.Body>
          {slot}
-        </Card.Content>:null
+        </Card.Body>:null
       }
     </Card>
   )
