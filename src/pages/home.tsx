@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Grid, Icon, Card} from 'semantic-ui-react';
+import './home.module.scss';
 import YumyCard from '@/components/card'
 import info from '@/assets/img/info.png'
-import './home.module.scss';
+import Qrcode from "@/components/qrcode";
 
 const home = () => {
   useEffect(() => {
@@ -18,12 +19,13 @@ const home = () => {
         />
         <YumyCard
           name='contact me'
-          slot={<Icon name='github' />}
+          slot={<Qrcode link='https://github.com/yumyC/react-infrastructure'/>}
         />
       </Grid.Column>
       <Grid.Column width={8}>
         <Card.Group>
-          <Card fluid color='red' header='article 1' />
+          <Card fluid color='red' header='article 1'>
+          </Card>
           <Card fluid color='orange' header='article 2' />
           <Card fluid color='yellow' header='article 3' />
         </Card.Group>
