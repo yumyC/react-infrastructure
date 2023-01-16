@@ -1,15 +1,18 @@
 import { useEffect } from "react";
-import { Container, Row, Col, Card, Button} from 'react-bootstrap';
+import React from "react";
+import { Layout, Row, Col, Card, Timeline} from 'antd';
 import './home.module.scss';
 import YumyCard from '@/components/card'
 import info from '@/assets/img/info.png'
 import Qrcode from "@/components/qrcode";
 
+const { Meta } = Card;
+
 const home = () => {
   useEffect(() => {
   }, [])
   return (
-    <Container>
+    <Layout>
       <Row>
         <Col>
           <YumyCard
@@ -22,25 +25,21 @@ const home = () => {
             slot={<Qrcode link='https://github.com/yumyC/react-infrastructure'/>}
           />
         </Col>
-        <Col lg={8}>
-          <Card>
-            <Card.Header as="h5">Featured</Card.Header>
-            <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <YumyCard
-            name='timeline'
+        <Col lg={8} md={5}>
+        <YumyCard
+            name='Article'
           />
         </Col>
+        <Col>
+        <Timeline>
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+          <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+        </Timeline>
+        </Col>
       </Row>
-    </Container>
+    </Layout>
   );
 };
 export default home;

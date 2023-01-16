@@ -1,44 +1,45 @@
-import { Container, Nav, Navbar, Image } from 'react-bootstrap';
+import { useState } from 'react';
+import { Menu, MenuProps, Row, Col, Space } from 'antd';
 import { useNavigate } from "react-router-dom";
 import './header.module.scss'
 import logo from '../assets/img/logo.svg'
 import ChangeTheme from './changeTheme'
 
-function Header() {
+function HeaderContent() {
   const navigate = useNavigate();
-  const menuArray: any = [
+  const items: MenuProps['items'] = [
     {
       'label': 'home',
-      'url': '/home'
+      'key': '/home',
     },
     {
       'label': 'article',
-      'url': '/dashboard'
+      'key': '/article',
     },
     {
       'label': 'about',
-      'url': '/about'
+      'key': '/about',
     },
   ]
+  const [current, setCurrent] = useState('mail');
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+    navigate(e.key);
+  };
+
   return (
     <div className="header-box">
-      <Container>
-        <Navbar bg="light" variant="light">
-          <Container>
-            <Navbar.Brand href="/home"><Image src={logo} /></Navbar.Brand>
-            <Nav className="me-auto">
-              {
-                menuArray.map((list, index) => {
-                  return <Nav.Link onClick={()=>navigate(list.url)}>{list.label}</Nav.Link>
-                })
-              }
-            </Nav>
-            <ChangeTheme/>
-          </Container>
-        </Navbar>
-      </Container>
+      <Row gutter={16} align="middle">
+        <Col span={'auto'}><img src={logo} /></Col>
+        <Col span={19}><Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} /></Col>
+        <Col span={'auto'}>
+          <ChangeTheme/>
+        </Col>
+      </Row>
     </div>
   );
 }
 
-export default Header;
+export default HeaderContent;

@@ -2,9 +2,9 @@ import { Link, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTheme, setTheme } from '@/store/themes/slice';
 import { useEffect } from "react";
-import { Button } from 'react-bootstrap';
-import { jsPDF } from "jspdf";
-// import font from "./NotoSansCJKtc-Regular-normal";
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
+import { Button } from 'antd';
 
 const changeTheme = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,12 @@ const changeTheme = () => {
   }
   return (
     <div className='flex-column-center'>
-        <Button onClick={setThemeColor}>changeTheme</Button>
+      <Switch
+        checkedChildren={<CheckOutlined />}
+        unCheckedChildren={<CloseOutlined />}
+        defaultChecked
+        onChange={setThemeColor}
+      />
     </div>
   );
 };

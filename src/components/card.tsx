@@ -1,4 +1,4 @@
-import { Card, Button, Image } from 'react-bootstrap'
+import { Card, Button, Image } from 'antd'
 
 interface cardInfo {
   name: string,
@@ -13,30 +13,30 @@ const CardExampleCard: React.FC<cardInfo> = (props) => {
   const date:string = new Date().toLocaleString();
 
   return (
-    <Card>
-      {
-        logoSrc?<Image src={logoSrc} />:null
-      }
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
+    <Card cover={
+      logoSrc?<Image src={logoSrc} />:null
+    }>
+
+      <div>
+        <div>{name}</div>
+        <div>
           {description?description:null}
-        </Card.Text>
+        </div>
         <span className='date'>{date}</span>
-      </Card.Body>
+      </div>
 
       {
         linkUrl?
-        <Card.Body>
+        <div>
           <Button><a></a></Button>
-        </Card.Body>:null
+        </div>:null
       }
 
       {
         slot?
-        <Card.Body>
+        <div>
          {slot}
-        </Card.Body>:null
+        </div>:null
       }
     </Card>
   )
