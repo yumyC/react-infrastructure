@@ -1,11 +1,13 @@
-import './footer.module.scss'
+import { Layout } from 'antd';
 
-function Footer() {
+const {Footer} = Layout;
+
+function FooterContent() {
   return (
-    <div className="footer">
-      copyright@yummy2022
-    </div>
+    <Footer style={{ textAlign: 'center' }}>
+      copyright@yummy2022-2023
+    </Footer>
   );
 }
 
-export default Footer;
+export default FooterContent;

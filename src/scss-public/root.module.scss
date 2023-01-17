@@ -1,7 +1,0 @@
-@import '@/scss-public/variables.module.scss';
-
-:root {
-  @each $color, $value in $theme-colors {
-    --#{$color}: #{$value};
-  }
-}

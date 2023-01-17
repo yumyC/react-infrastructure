@@ -39,10 +39,17 @@ const routes: Array<routeType> = [
         }
       },
       {
-        path: '/about/:id',
-        element: () => import('@/pages/about'),
+        path: '/article',
+        element: () => import('@/article/articleTop'),
         meta: {
-          title: "文章2",
+          title: "文章",
+        }
+      },
+      {
+        path: '/article/:id',
+        element: () => import('@/article/article'),
+        meta: {
+          title: "文章",
         }
       },
       {

@@ -5,7 +5,7 @@ interface ThemeInfo {
 
 export function getThemeInfo() {
   return { data: {
-    color: 'black',
+    color: 'dark',
     size: 'normal'
   }
 }

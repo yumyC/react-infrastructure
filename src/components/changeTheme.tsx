@@ -1,10 +1,7 @@
-import { Link, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTheme, setTheme } from '@/store/themes/slice';
 import { useEffect } from "react";
-import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
-import { Button } from 'antd';
 
 const changeTheme = () => {
   const dispatch = useDispatch();
@@ -18,32 +15,22 @@ const changeTheme = () => {
   }
 
   const setThemeColor = () => {
-    const nowColor: string = themeColor==="black"?'white':'black';
+    const nowColor: string = themeColor==="dark"?'white':'dark';
     dispatch(setTheme({color: nowColor, size: 'small'}) as any);
-
-    // const doc = new jsPDF();
-
-    // doc.addFileToVFS('NotoSansCJKtc-Regular-normal.ttf', font);
-    // doc.addFont('NotoSansCJKtc-Regular-normal.ttf', 'NotoSansCJKtc-Regular', 'normal');
-    // doc.setFont("NotoSansCJKtc-Regular");
-    // doc.text("你好!", 10, 10);
-    // doc.save("a4.pdf");
   }
 
   if(themeColor) {
-    const newColor = themeColor==='black'?'#3e1058':'#ffffff'
-    const newFontColor = themeColor==='black'?'#ffffff':'#444'
-    const newSecondaryColor = themeColor==='black'?'#4f3c64':'#f7f7f7'
+    const newColor = themeColor==='dark'?'#333':'#f9f9f9'
+    const newFontColor = themeColor==='dark'?'#f9f9f9':'#333'
     const rootDom:any = document.querySelector(':root');
     rootDom.style.setProperty('--theme-color', newColor);
-    rootDom.style.setProperty('--theme-secondary-color', newSecondaryColor);
     rootDom.style.setProperty('--font-color', newFontColor);
   }
   return (
     <div className='flex-column-center'>
       <Switch
-        checkedChildren={<CheckOutlined />}
-        unCheckedChildren={<CloseOutlined />}
+        checkedChildren={'light'}
+        unCheckedChildren={'dark'}
         defaultChecked
         onChange={setThemeColor}
       />
