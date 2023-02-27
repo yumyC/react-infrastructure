@@ -25,8 +25,8 @@ function HeaderContent() {
   const [current, setCurrent] = useState('');
   const location = useLocation();
   useEffect(() => {
-    const pathname = location.pathname=='/'?'/home':`/${location.pathname.split('/')[1]}`;
-    setCurrent(pathname);
+    const pathname = location.pathname.split('/')[1] ?? 'home';
+    setCurrent(`/${pathname}`);
   }, [location.pathname])
 
   const onClick: MenuProps['onClick'] = (e) => {
