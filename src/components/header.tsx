@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, MenuProps, Row, Col } from 'antd';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router';
 import './header.module.less'
 import logo from '../assets/img/logo.svg'
 import ChangeTheme from './changeTheme'
@@ -21,7 +22,12 @@ function HeaderContent() {
       'key': '/about',
     },
   ]
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('');
+  const location = useLocation();
+  useEffect(() => {
+    const pathname = location.pathname=='/'?'/home':location.pathname;
+    setCurrent(pathname);
+  }, [])
 
   const onClick: MenuProps['onClick'] = (e) => {
     setCurrent(e.key);
