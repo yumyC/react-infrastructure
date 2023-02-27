@@ -2,6 +2,7 @@ import React from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
 import _ from 'lodash'; // js工具库
 import routes, { routeType } from './routers';
+import NProgress from '@/components/nprogress';
 
 export default function Routes() {
   const element = useRoutes(renderRoutes(routes));
@@ -16,7 +17,7 @@ function renderRoutes(routes: Array<routeType>) {
     // element
     if (item?.element) {
       const Component = React.lazy(item.element);
-      res.element = (<React.Suspense fallback={'...'}>
+      res.element = (<React.Suspense fallback={<NProgress/>}>
           <Component />
       </React.Suspense>);
     }
