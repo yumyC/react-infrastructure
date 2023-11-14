@@ -27,6 +27,6 @@
     }
   },
   "include": ["src", "types/*"],
-  "exclude": ["node_modules", "build", "public"],
+  "exclude": ["node_modules", "dist", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
