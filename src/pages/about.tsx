@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import {Row, Col,Timeline} from 'antd';
-import Qrcode from "@/components/qrcode";
+// import Qrcode from "@/components/qrcode";
 import YumyCard from '@/components/card'
 function about() {
 
-  const list: any = useSelector((store: any) => store.theme);
-  const themeColor = list?.entities?.theme?.color;
+  // const list: any = useSelector((store: any) => store.theme);
+  // const themeColor = list?.entities?.theme?.color;
   return (
     <div>
        <Row justify={'space-between'} gutter={[16, 20]}>

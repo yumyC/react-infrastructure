@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Layout, ConfigProvider } from 'antd';
 import Header from '@/components/header'
 import Footer from '@/components/footer'
